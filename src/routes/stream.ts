@@ -3,7 +3,7 @@ import ytdl from '@distube/ytdl-core';
 
 const streamRouter = Router();
 
-streamRouter.get('/stream-audio', async (req: Request, res: Response) => {
+streamRouter.get('/', async (req: Request, res: Response) => {
   const videoId = req.query.videoId as string;
   if (!videoId) {
     return res.status(400).send('Video ID is required.');
