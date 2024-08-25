@@ -18,7 +18,7 @@ const ytmusic_api_1 = __importDefault(require("ytmusic-api"));
 const axios_1 = __importDefault(require("axios"));
 const ytmusic = new ytmusic_api_1.default();
 exports.lyricsRouter = express_1.default.Router();
-exports.lyricsRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.lyricsRouter.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let artist_name = req.body.artist_name;
     let track_name = req.body.track_name;
     const duration = req.body.duration;
@@ -34,6 +34,8 @@ exports.lyricsRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const songs = yield axios_1.default.get(`https://lrclib.net/api/search?q=${track_name}+${artist_name}`);
         for (const song of songs.data) {
+            console.log(track_name);
+            // console.log(song.name);
             if (song.name.includes(track_name, 0) || track_name.includes(song.name, 0)) {
                 if (artist_name && song.artist) {
                     if (song.artist.includes(artist_name, 0) || artist_name.includes(song.artist, 0)) {

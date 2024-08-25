@@ -20,5 +20,5 @@ app.use("/api/v1/search", search_1.searchRouter);
 app.use("/api/v1/signin", signin_1.signInRouter);
 app.use("/api/v1/signup", signup_1.signUpRouter);
 app.use("/api/v1/stream", stream_1.default);
-app.listen(3000);
+app.listen(3001);
 console.log("Server is listening on port 3000");

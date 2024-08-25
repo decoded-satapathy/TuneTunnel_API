@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const ytdl_core_1 = __importDefault(require("@distube/ytdl-core"));
 const streamRouter = (0, express_1.Router)();
-streamRouter.get('/stream-audio', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+streamRouter.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     const videoId = req.query.videoId;
     if (!videoId) {

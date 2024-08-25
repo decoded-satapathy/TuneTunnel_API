@@ -6,7 +6,7 @@ const ytmusic = new YTMusic();
 
 export const lyricsRouter = express.Router();
 
-lyricsRouter.get("/", async (req, res) => {
+lyricsRouter.post("/", async (req, res) => {
   let artist_name = req.body.artist_name;
   let track_name = req.body.track_name;
   const duration = req.body.duration;
@@ -23,6 +23,8 @@ lyricsRouter.get("/", async (req, res) => {
     const songs = await axios.get(`https://lrclib.net/api/search?q=${track_name}+${artist_name}`);
 
     for (const song of songs.data) {
+      console.log(track_name);
+      // console.log(song.name);
       if (song.name.includes(track_name, 0) || track_name.includes(song.name, 0)) {
         if (artist_name && song.artist) {
           if (song.artist.includes(artist_name, 0) || artist_name.includes(song.artist, 0)) {
