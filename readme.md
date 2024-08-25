@@ -12,21 +12,21 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your system.
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/decoded-satapathy/TuneTunnel_API.git
-    ```
+   ```bash
+   git clone https://github.com/decoded-satapathy/TuneTunnel_API.git
+   ```
 
 2. Navigate to the project directory:
 
-    ```bash
-    cd TuneTunnel_API
-    ```
+   ```bash
+   cd TuneTunnel_API
+   ```
 
 3. Install the dependencies:
 
-    ```bash
-    npm i
-    ```
+   ```bash
+   npm i
+   ```
 
 ### Running the Server
 
@@ -43,10 +43,10 @@ The server will start on port `3000` by default. If port `3000` is busy, the ser
 If you need to change the port, open the `src/index.ts` file and modify the following line:
 
 ```typescript
-app.listen(3000); // change 3000 to some unused port like 3001
+app.listen(3001); // change 3000 to some unused port like 3001
 ```
 
-Replace `3000` with your desired port number.
+Replace `3001` with your desired port number.
 
 ## API Endpoints
 
@@ -55,4 +55,3 @@ Replace `3000` with your desired port number.
 ## License
 
 (Include license information here, if applicable)
-
